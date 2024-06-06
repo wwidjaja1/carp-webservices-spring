@@ -1,5 +1,5 @@
-import org.springframework.boot.gradle.tasks.bundling.BootJar
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
     idea
@@ -121,9 +121,11 @@ dependencies {
     implementation("cz.jirutka.rsql:rsql-parser:${property("rsqlParserVersion")}")
 
     // COMMONS-IO
-    implementation("commons-io:commons-io:${property("commonsIOVersion")}")
+    implementation("commons-io:commons-io:${property("commonsIOVersion")}"){
+        exclude( "commons-logging","commons-logging")
+    }
 
-    // HIBERNATE
+    // HIBERNATEß
     implementation("org.hibernate:hibernate-core:${property("hibernateVersion")}")
     implementation("io.hypersistence:hypersistence-utils-hibernate-63:${property("hibernateTypesVersion")}")
 
