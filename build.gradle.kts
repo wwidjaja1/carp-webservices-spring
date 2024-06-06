@@ -1,5 +1,7 @@
+<<<<<<< HEAD
 import io.gitlab.arturbosch.detekt.Detekt
 import org.jlleitschuh.gradle.ktlint.KtlintExtension
+=======
 import org.springframework.boot.gradle.tasks.bundling.BootJar
 
 plugins {
@@ -123,7 +125,7 @@ dependencies {
     // COMMONS-IO
     implementation("commons-io:commons-io:${property("commonsIOVersion")}")
 
-    // HIBERNATE
+    // HIBERNATEß
     implementation("org.hibernate:hibernate-core:${property("hibernateVersion")}")
     implementation("io.hypersistence:hypersistence-utils-hibernate-63:${property("hibernateTypesVersion")}")
 

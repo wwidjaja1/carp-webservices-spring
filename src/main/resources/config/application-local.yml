@@ -124,16 +124,17 @@ com:
       oidc:
         resourceserver:
           permit-all:
-          - /actuator/**
-          - /swagger-ui/**
-          - /v3/api-docs/**
+            - /actuator/**
+            - /swagger-ui/**
+            - /v3/api-docs/**
           cors:
-          - path: /**
-            allowed-origins: "*"
+            - path: /**
+              allowed-origins: "*"
         ops:
           - iss: ${keycloak.auth-server-url}/realms/${keycloak.realm}
             username-claim: preferred_username
             authorities:
+<<<<<<< HEAD
             - path: $.realm_access.roles
               prefix: ROLE_
               caze: upper
@@ -149,6 +150,23 @@ com:
               prefix: consent_owner_
             - path: $.collection_owner
               prefix: collection_owner_
+=======
+              - path: $.realm_access.roles
+                prefix: ROLE_
+                caze: upper
+              - path: $.manage_study
+                prefix: manage_study_
+              - path: $.in_deployment
+                prefix: in_deployment_
+              - path: $.protocol_owner
+                prefix: protocol_owner_
+              - path: $.file_owner
+                prefix: file_owner_
+              - path: $.consent_owner
+                prefix: consent_owner_
+              - path: $.collection_owner
+                prefix: collection_owner_
+>>>>>>> e548093 (excluded commons-logging)
 
 springdoc:
   swagger-ui:
