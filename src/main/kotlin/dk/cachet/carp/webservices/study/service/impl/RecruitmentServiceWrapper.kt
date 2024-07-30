@@ -77,6 +77,7 @@ class RecruitmentServiceWrapper(
         studyId: UUID,
         offset: Int,
         limit: Int,
+        filter: String?,
     ): List<Account> =
         withContext(Dispatchers.IO + SecurityCoroutineContext()) {
             var participants = core.getParticipants(studyId)

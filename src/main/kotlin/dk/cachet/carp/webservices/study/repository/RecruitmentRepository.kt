@@ -12,6 +12,9 @@ interface RecruitmentRepository : JpaRepository<Recruitment, Int> {
     @Query(value = "SELECT * FROM recruitments WHERE snapshot->>'studyId' = ?1", nativeQuery = true)
     fun findRecruitmentByStudyId(studyId: String): Recruitment?
 
+    @Query(value = "SELECT * FROM recruitments where snapshot->>'studyId' = ?1 AND snapshot->>'' limit ?2 offset ?3", nativeQuery = true)
+    fun findParticipants(studyId: String): Recruitment?
+
     @Modifying
     @Transactional
     @Query(
